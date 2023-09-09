@@ -10,8 +10,5 @@
         <module name="cheat" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="cheat" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

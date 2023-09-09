@@ -1,81 +1,68 @@
 package com.group.dto;
 
+import com.group.enmus.ResultEnum;
+
 import java.io.Serializable;
 
+/**
+ * @author zhanglei
+ */
 public class AjaxResult implements Serializable{
 
-    private boolean success;
-
+    private ResultEnum code;
     private String msg;
-
     private Object data;
-
-    // 200成功,300参数不完整,500程序错误
-    private Integer status;
-    
-    //静态方法  wxf  2018 3-27
-    
-
-   	public static AjaxResult success(Object data){
-   		return new AjaxResult(true,"成功",data, 200);
-   	}
-
-   	public static AjaxResult success(Object data, String msg){
-   		return new AjaxResult(true, msg, data,200);
-   	}
-
-   	public static AjaxResult success(String msg){
-   		return new AjaxResult(true, msg, null,200);
-   	}
-
-       public static AjaxResult fail_500(String msg){
-           return new AjaxResult(false, msg, null,500);
-       }
-       public static AjaxResult fail_300(String msg){
-           return new AjaxResult(false, msg, null,300);
-       }
 
     public AjaxResult() {
     }
 
-    public AjaxResult(boolean success, String msg, Object data, Integer status) {
-        this.success = success;
+    public AjaxResult(ResultEnum code, String msg, Object data) {
+        this.code = code;
         this.msg = msg;
         this.data = data;
-        this.status = status;
     }
 
-    public boolean isSuccess() {
-        return success;
+    public static AjaxResult success() {
+        return new AjaxResult(ResultEnum.SUCCESS, "请求成功", null);
+    }
+    public static AjaxResult error() {
+        return new AjaxResult(ResultEnum.FAIL, "响应失败", null);
+    }
+
+    public ResultEnum getCode() {
+        return code;
+    }
+
+    public void setCode(ResultEnum code) {
+        this.code = code;
     }
 
     public String getMsg() {
         return msg;
     }
 
-    public Object getData() {
-        return data;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public Object getData() {
+        return data;
     }
 
     public void setData(Object data) {
         this.data = data;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("{");
+        sb.append("\"code\":")
+                .append(code);
+        sb.append(",\"msg\":\"")
+                .append(msg).append('\"');
+        sb.append(",\"data\":")
+                .append(data);
+        sb.append('}');
+        return sb.toString();
     }
-
-
 }

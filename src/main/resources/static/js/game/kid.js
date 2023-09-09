@@ -2,7 +2,7 @@ $(function(){
 
 
 // webSocket服务器地址
-    var urlPrefix ='ws://192.168.1.23:8080/game/kid';
+    var urlPrefix ='ws://172.172.103.193:8080/game/kid';
 // 服务器交互工具
     var ws = null;
 // 返回对象

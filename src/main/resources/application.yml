@@ -1,0 +1,12 @@
+
+server:
+  port: 8080
+
+spring:
+  thymeleaf:
+    # 开发过程中关闭缓存
+    cache: false
+    # 使标签不必闭合
+    mode: LEGACYHTML5
+    # controller跳转页面在哪
+    prefix: classpath:/templates/
