@@ -4,10 +4,6 @@ import com.group.dto.AjaxResult;
 import com.group.dto.LoginUserDto;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
-
 /**
  * @author zhanglei
  * @version 1.0.0

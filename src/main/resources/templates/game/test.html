@@ -1,21 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script th:src="@{/js/jquery/jquery-3.2.1.min.js}" src="../../static/js/jquery/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>塔罗牌动画</title>
     <style>
+
+        *{
+            margin:0;
+            padding:0;
+            outline:none;
+        }
+
+        div{
+            width:223px;
+            height:333px;
+            margin: 50px auto;
+            position:relative;
+            perspective: 400px;  /* 透视效果，增强立体感 */
+        }
+
+        img{
+            position:absolute;
+            top:0;
+            left:0;
+            backface-visibility: hidden;  /* 背面不可见 */
+            transition:all 1s linear 0s;  /* 所有属性，持续1s，linear函数，过渡0s */
+        }
+
+        .ka02{
+            transform:rotateY(180deg);    /* 先将图2放到背面（不可见）*/
+        }
+
+        div:hover .ka02{transform: rotateY(0deg);}
+
+        div:hover .ka01{ transform: rotateY(-180deg);}   /* 鼠标悬浮时图1转到后面 */
+
 
     </style>
 </head>
+
 <body>
-    <div id="one"></div>
+<div>
+    <span>
+        <img class="ka01" src="../../static/img/poker/DG.png">
+        <img class="ka02" src="../../static/img/poker/T9.png">
+    </span>
+    <span>
+        <img class="ka01" src="../../static/img/poker/DG.png">
+        <img class="ka02" src="../../static/img/poker/T9.png">
+    </span>
 
-    <script type="text/javascript">
-        var v = "当前人数:1/2 &nbsp&nbsp&nbsp 匹配中...";
-        $("#one").html(v);
-
-    </script>
-
+</div>
 </body>
+
 </html>

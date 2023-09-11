@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>游戏大厅</title>
+  <link th:href="@{/layui/css/layui.css}" rel="stylesheet">
+  <link th:href="@{/css/index.css}" rel="stylesheet">
+  <script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+  <script type="text/javascript" th:src="@{/js/game/gameHall.js}"></script>
+</head>
+<body>
+<div class="layui-carousel" id="ID-carousel-demo-image" >
+  <div carousel-item class="layui-anim layui-anim-left layui-anim-loop">
+    <div><img th:src="@{/img/bg1.jpg}"></div>
+    <div><img th:src="@{/img/bg2.jpg}"></div>
+    <div><img th:src="@{/img/bg3.jpg}"></div>
+    <div><img th:src="@{/img/bg4.jpg}"></div>
+    <div><img th:src="@{/img/bg5.jpg}"></div>
+  </div>
+</div>
+
+</body>
+</html>
+

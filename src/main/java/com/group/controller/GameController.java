@@ -1,15 +1,24 @@
 package com.group.controller;
 
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.support.HttpRequestHandlerServlet;
 
 @Controller
-@RequestMapping("/game")
 public class GameController {
+    /**
+     * 所有资源放行
+     * @param request
+     * @return
+     */
 
-    @RequestMapping("/kid")
-    public String Cat(){
-        return "game/kid";
+    @RequestMapping("/game/gamehall.html")
+    public String Cat(HttpServletRequest request) {
+        String uri = request.getRequestURI();
+        System.out.println(uri);
+        return "game/gameHall";
     }
 
 }
